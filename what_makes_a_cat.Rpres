@@ -1,0 +1,273 @@
+<style>
+
+.reveal section img {
+  border: 0px;
+  box-shadow: 0 0 0 0;
+}
+.reveal table td, .reveal table th {
+  border: 0px;
+}
+
+.reveal table {
+  border: 0px;
+}
+
+.reveal h1 {
+  font-size: 2em;
+  hyphens: none;
+}
+
+.reveal h3 {
+  font-size: 1.2em;
+}
+
+.reveal figcaption {
+  font-size: 0.4em;
+}
+
+.smallcode pre code {
+  font-size: 1em;
+}
+
+.smallercode pre code {
+  font-size: .9em;
+}
+
+.reveal .smalltext {
+  font-size: 0.75em;
+}
+
+.reveal .mediumtext {
+  font-size: 0.85em;
+}
+
+.reveal .src {
+  font-size: 0.75em;
+}
+</style>
+
+
+What makes a cat a cat? How neural networks see the world
+========================================================
+author: Sigrid Keydana, Trivadis
+date: 06/12/2018
+autosize: true
+width: 1200
+
+
+========================================================
+type:prompt
+
+&nbsp; 
+
+&nbsp; 
+
+<h1>
+It's all about trust
+</h1>
+
+
+Can I trust
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.width=16, fig.height=8, fig.path='Figs/',
+                      echo=FALSE, warning=FALSE, message=FALSE,
+                      cache = TRUE)
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+bold_text_20 <- element_text(face = "bold", size = 20)
+bold_text_16 <- element_text(face = "bold", size = 16)
+```
+
+
+... that model?
+
+... those predictions?
+
+
+We want explanations!
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+TBD example applications (ML/DL)
+
+explain why both explaining the model AND the predictions matter
+
+
+A matter of life and death...
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+... and there's (probably) a convnet behind
+
+Convnet, what have you learned?
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+Goal: Explain the _model_. What is the model _looking for_?
+
+Enter: __feature visualization__
+
+"_Feature visualization answers questions about what a network — or parts of a network — are looking for by generating examples._" [1]
+
+
+What in the input made you think so?
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+Goal: Explain behavior on individual _instances_: What makes the model draw that conclusion?
+
+Enter: __attribution__
+
+"_Attribution studies what part of an example is responsible for the network activating a particular way._" [1]
+
+
+========================================================
+type:prompt
+
+&nbsp; 
+
+&nbsp; 
+
+<h1>
+Feature visualization
+</h1>
+
+
+Why feature visualization?
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+
+How can I do that?
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+
+========================================================
+type:prompt
+
+&nbsp; 
+
+&nbsp; 
+
+<h1>
+Attribution
+</h1>
+
+
+Why?
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+Types of attribution methods
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+- gradient-based
+- perturbation-based
+
+
+A straightforward approach: Visualize activations
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+Perturbation-based attribution with LIME
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+TBD example
+
+One of many gradient-based methods: CAM
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+
+========================================================
+type:prompt
+
+&nbsp; 
+
+&nbsp; 
+
+<h1>
+... or both? 
+</h1>
+
+
+tbd olah
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+
+
+Sources
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+[1] <a href="https://distill.pub/2017/feature-visualization/">Olah, et al., "Feature Visualization", Distill, 2017.</a>
+
+[2] <a href="https://distill.pub/2018/building-blocks/">Olah, et al., "The Building Blocks of Interpretability", Distill, 2018.</a>
+
+

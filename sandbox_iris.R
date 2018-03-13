@@ -13,7 +13,7 @@ model <- lda(iris_train, iris_lab)
 model %>% predict(iris_test)
 explainer <- lime(iris_train, model)
 
-explanation <- explain(iris_test, explainer, n_labels = 1, n_features = 2,
+explanation <- lime::explain(iris_test, explainer, n_labels = 1, n_features = 2,
                        #feature_select = "lasso_path")
                        feature_select = "highest_weights")
                        #  feature_select = "forward_selection",
@@ -54,7 +54,7 @@ explainer <- lime(
   model          = model, 
   bin_continuous = TRUE)
 
-explanation <- explain(
+explanation <- lime::explain(
   iris_test, 
   explainer    = explainer, 
   n_labels     = 1, 
