@@ -225,7 +225,35 @@ Perturbation-based attribution with LIME
 
 &nbsp;
 
-TBD example
+<table>
+<tr>
+<td><img src='mturk1_example.png' width='800px' /></td><td><img src='lime.png' width='800px'/></td>
+</tr>
+<tr><td class='src'>Source: [3] </td></tr>
+</table>
+
+
+
+How LIME works
+========================================================
+
+<img src="tri_logo_high.jpg" style="position:absolute;top:0px;right:0px; width: 10%" />
+<img src='cube3.png' border=0 style="position:absolute;top:90%;right:0px; width: 8%" />
+
+&nbsp;
+
+Minimize
+
+$$\mathcal{L}(f,g,\pi_x) = \sum_{z,z' \in \mathcal{Z}} \pi_x(z) (f(z) - g(z'))^2$$
+
+where
+
+- $f$ is the model to be explained
+- $g$ is the explainer (an interpretable model acting on binary features)
+- $z$ is the model prediction on the instance to be explained
+- $z'$ is the explainer's prediction on a randomly permuted sample
+- $\pi_x$ is the distance (e.g., L2) between original instance and random sample
+
 
 One of many gradient-based methods: CAM
 ========================================================
@@ -266,8 +294,8 @@ Sources
 
 &nbsp;
 
-[1] <a href="https://distill.pub/2017/feature-visualization/">Olah, et al., "Feature Visualization", Distill, 2017.</a>
+[1] Olah, et al., <a href="https://distill.pub/2017/feature-visualization/">Feature Visualization</a>, Distill, 2017.
 
-[2] <a href="https://distill.pub/2018/building-blocks/">Olah, et al., "The Building Blocks of Interpretability", Distill, 2018.</a>
+[2] Olah, et al., <a href="https://distill.pub/2018/building-blocks/">The Building Blocks of Interpretability</a>, Distill, 2018.
 
-
+[3] Ribeiro, Marco et al., <a href="https://arxiv.org/abs/1602.04938">Why Should Trust You?: Explaining the Predictions of Any Classifier</a>, arXiv, 2016.
